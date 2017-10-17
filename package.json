@@ -1,6 +1,6 @@
 {
   "name": "roslib",
-  "homepage": "https://www.robotwebtools.org",
+  "homepage": "https://www.webtools.org",
   "description": "The standard ROS Javascript Library",
   "version": "0.19.0-SNAPSHOT",
   "license": "BSD-2-Clause",
@@ -56,17 +56,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RobotWebTools/roslibjs/releases"
+    "url": "https://github.com/jihoonl/roslibjs/releases"
   },
   "bugs": {
-    "url": "https://github.com/RobotWebTools/roslibjs/issues"
+    "url": "https://github.com/jihoonl/roslibjs/issues"
   },
   "keywords": [
     "ROS",
     "ros",
     "roslib",
     "roslibjs",
-    "robot"
+    ""
   ],
-  "author": "Robot Webtools Team <robot-web-tools@googlegroups.com> (http://robotwebtools.org)"
+  "author": " Webtools Team <robot-web-tools@googlegroups.com> (http://robotwebtools.org)"
 }
