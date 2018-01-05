@@ -18,7 +18,7 @@ push() {
   echo "Add Remote"
   git remote add pr_origin https://${GITHUB_API_KEY}@github.com/${TRAVIS_PULL_REQUEST_SLUG}.git > /dev/null 2>&1
   echo "Push"
-  git push --queit --set-upstream pr_origin ${TRAVIS_BRANCH}
+  git push --quiet --set-upstream pr_origin ${TRAVIS_BRANCH}
 }
 
 echo "Hello World"
