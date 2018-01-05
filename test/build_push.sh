@@ -5,12 +5,29 @@ setup_git() {
   git config --global user.name "Travis CI"
 }
 
-pwd
+checkout_and_commit() {
+  echo "Checking out branch: ${TRAVIS_BRANCH}"
+  git checkout ${TRAVIS_BRANCH}
+  echo "Add built module"
+  git add build/roslib.js
+  git add build/roslib.min.js
+  git commit build/roslib.js build/roslib.min.js -m "Update built module"
+}
+
+push() {
+  echo "Add Remote"
+  git remote add pr_origin https://${GITHUB_API_KEY}@github.com/${TRAVIS_PULL_REQUEST_SLUG}.git > /dev/null 2>&1
+  echo "Push"
+  git push --queit --set-upstream pr_origin ${TRAVIS_BRANCH}
+}
+
 echo "Hello World"
-echo "branch : ${TRAVIS_BRANCH}"
-git add build/roslib.js
-git add build/roslib.min.js
-git commit build/roslib.js build/roslib.min.js -m "Test"
-git push
+echo "Event Type : ${TRAVIS_EVENT_TYPE}"
+echo "Travis branch : ${TRAVIS_BRANCH}"
+echo "TRAVIS Pull reqt: ${TRAVIS_PULL_REQUEST}"
+echo "SLUG : ${TRAVIS_PULL_REQUEST_SLUG}"
+setup_git
+checkout_and_commit
+push
 
 echo "After push"
