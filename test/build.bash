@@ -28,4 +28,5 @@ sh examples/setup_examples.sh
 
 rostopic list
 npm install
+npm run-script rawbuild
 # npm run test-examples
