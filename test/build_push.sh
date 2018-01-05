@@ -8,3 +8,8 @@ setup_git() {
 
 pwd
 echo "Hello World"
+echo "branch : ${TRAVIS_BRANCH}"
+git add build/roslib.js
+git add build/roslib.min.js
+git commit build/roslib.js build/roslib.min.js -m "Test"
+git push
