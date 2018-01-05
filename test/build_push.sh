@@ -29,7 +29,7 @@ echo "TRAVIS Pull reqt: ${TRAVIS_PULL_REQUEST}"
 echo "SLUG : ${TRAVIS_REPO_SLUG}"
 echo "PR SLUG : ${TRAVIS_PULL_REQUEST_SLUG}"
 
-if [ "${TRAVIS_PULL_REQUEST}" == true ]; then
+if [ "${TRAVIS_PULL_REQUEST}" == "true" ]; then
   echo "Run push"
   setup_git
   checkout_and_commit
