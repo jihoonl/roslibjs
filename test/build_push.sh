@@ -16,7 +16,7 @@ checkout_and_commit() {
 
 push() {
   echo "Add Remote"
-  git remote add pr_origin https://${GITHUB_API_KEY}@github.com/${TRAVIS_PULL_REQUEST_SLUG}.git > /dev/null 2>&1
+  git remote add pr_origin https://${GITHUB_API_KEY}@github.com/${TRAVIS_REPO_SLUG}.git > /dev/null 2>&1
   echo "Push"
   git push --quiet --set-upstream pr_origin ${TRAVIS_BRANCH}
 }
@@ -25,7 +25,8 @@ echo "Hello World"
 echo "Event Type : ${TRAVIS_EVENT_TYPE}"
 echo "Travis branch : ${TRAVIS_BRANCH}"
 echo "TRAVIS Pull reqt: ${TRAVIS_PULL_REQUEST}"
-echo "SLUG : ${TRAVIS_PULL_REQUEST_SLUG}"
+echo "SLUG : ${TRAVIS_REPO_SLUG}"
+echo "PR SLUG : ${TRAVIS_PULL_REQUEST_SLUG}"
 setup_git
 checkout_and_commit
 push
