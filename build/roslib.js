@@ -826,7 +826,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
  * If you use nodejs, this is the variable you get when you require('roslib')
  */
 var ROSLIB = this.ROSLIB || {
-  REVISION : '0.20.0'
+  REVISION : '0.20.0-test'
 };
 
 var assign = require('object-assign');
