@@ -1,8 +1,7 @@
-dist: xenial
+dist: trusty
+sudo: required
 services:
   - docker
-
-sudo: required
 
 notifications:
   email:
