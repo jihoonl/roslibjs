@@ -7,6 +7,7 @@ setup_git() {
 
 checkout_and_commit() {
   echo "Checking out branch: ${TRAVIS_PULL_REQUEST_BRANCH}"
+  git fetch origin ${TRAVIS_PULL_REQUEST_BRANCH}
   git branch -l
   git remote -v
   git checkout ${TRAVIS_PULL_REQUEST_BRANCH}
