@@ -6,11 +6,7 @@ setup_git() {
 }
 
 checkout_and_commit() {
-  echo "Checking out branch: ${TRAVIS_PULL_REQUEST_BRANCH}"
-  git fetch origin ${TRAVIS_PULL_REQUEST_BRANCH}
-  git branch -l
-  git remote -v
-  git checkout ${TRAVIS_PULL_REQUEST_BRANCH}
+  git checkout -b ${TRAVIS_PULL_REQUEST_BRANCH}_to_push
   echo "Add built module"
   git add build/roslib.js
   git add build/roslib.min.js
@@ -21,7 +17,7 @@ push() {
   echo "Add Remote"
   git remote add pr_origin https://${GITHUB_API_KEY}@github.com/${TRAVIS_PULL_REQUEST_SLUG}.git > /dev/null 2>&1
   echo "Push"
-  git push --quiet --set-upstream pr_origin ${TRAVIS_PULL_REQUEST_BRANCH}
+  git push --quiet --set-upstream pr_origin ${TRAVIS_PULL_REQUEST_BRANCH}_to_push:${TRAVIS_PULL_REQUEST_BRANCH}
 }
 
 echo "Hello World"
