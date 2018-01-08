@@ -22,9 +22,8 @@ push() {
   git add build/roslib.js
   git add build/roslib.min.js
   git commit build/roslib.js build/roslib.min.js -m "Update built module"
-
   echo "Push"
-  git push --quiet --set-upstream pr_origin ${TRAVIS_PULL_REQUEST_BRANCH}_to_push:${TRAVIS_PULL_REQUEST_BRANCH}
+  git push --quiet --set-upstream pr_origin ${TRAVIS_PULL_REQUEST_BRANCH}
 }
 
 echo "Hello World"
