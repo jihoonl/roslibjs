@@ -7,7 +7,7 @@ setup_git() {
 
 checkout_and_commit() {
   git fetch origin ${TRAVIS_PULL_REQUEST_BRANCH}
-  git checkout ${TRAVIS_PULL_REQUEST_BRANCH}
+  git checkout -b ${TRAVIS_PULL_REQUEST_BRANCH} origin/${TRAVIS_PULL_REQUEST_BRANCH}
   echo "Add built module"
   git add build/roslib.js
   git add build/roslib.min.js
