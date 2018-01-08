@@ -17,5 +17,4 @@ script:
   - sudo docker run -v $(pwd):/root/roslibjs --rm roslibjsdocker bash -i -c 'bash /root/roslibjs/test/build.bash'
 
 after_success:
-  - "echo 'Current branch success : ${TRAVIS_BRANCH}'"
   - sh test/build_push.sh
